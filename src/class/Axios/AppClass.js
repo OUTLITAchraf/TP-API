@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ListUser from "./ListUser";
+import ListUser from "../../class/Axios/ListUserClass";
 
 class App extends Component {
   constructor(props) {

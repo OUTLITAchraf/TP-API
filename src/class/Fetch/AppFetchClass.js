@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ListUser from "./ListUserFetch";
+import ListUser from "../../class/Fetch/ListUserFetchClass";
 
 class App extends Component {
   constructor(props) {

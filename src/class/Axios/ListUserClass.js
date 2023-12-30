@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import User from "./User";
+import User from "../../class/Axios/UserClass";
 
 export default function ListUser(props) {
   const [activeId, setActiveId] = useState(1);

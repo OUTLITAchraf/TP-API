@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import User from "./UserFetch";
+import User from "../../class/Fetch/UserFetchClass";
 
 class ListUser extends Component {
   constructor(props) {
@@ -18,18 +18,18 @@ class ListUser extends Component {
     const { activeId } = this.state;
 
     return (
-        <div className="App">
-            <h1>nombre d'utilisateurs: {utilisateurs.length}</h1>
-            {utilisateurs.map((user) => (
-            <User
-                key={user.id}
-                user={user}
-                activeId={activeId}
-                handleChangeActiveId={this.handleChangeActiveId}
-            />
-            ))}
-        </div>
-        );
+      <div className="App">
+        <h1>nombre d'utilisateurs: {utilisateurs.length}</h1>
+        {utilisateurs.map((user) => (
+          <User
+            key={user.id}
+            user={user}
+            activeId={activeId}
+            handleChangeActiveId={this.handleChangeActiveId}
+          />
+        ))}
+      </div>
+    );
   }
 }
 

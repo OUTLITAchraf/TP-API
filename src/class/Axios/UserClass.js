@@ -11,10 +11,17 @@ class User extends Component {
   }
 
   handlePosts = () => {
-    const response = axios.get("https://jsonplaceholder.typicode.com/posts")
-    this.setState(response.data.filter(post => post.userId === this.props.user.id));
-    this.props.handleChangeActiveId(this.props.user.id);
-
+    axios.get("https://jsonplaceholder.typicode.com/posts")
+      .then(response => {
+        const filteredPosts = response.data.filter(post => post.userId === this.props.user.id);
+        this.setState({ posts: filteredPosts });
+        this.props.handleChangeActiveId(this.props.user.id);
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+        this.setState({ posts: [] });
+        this.props.handleChangeActiveId(this.props.user.id);
+      });
   };
 
   render() {
